@@ -6,6 +6,8 @@ version := "1.0"
 
 resolvers += "Typesafe Repository" at "http://repo.typesafe.com/typesafe/releases/"
 
+resolvers in ThisBuild += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots"
+
 libraryDependencies ++= deps
 
 scalaVersion := "2.11.7"
@@ -16,6 +18,8 @@ lazy val deps = {
   val akkaStreamV = "1.0"
   Seq(
     "org.jsoup"              %  "jsoup"                              % "1.8.3",
+    "com.typesafe.play"      %% "play-ws"                            % "2.4.4",
+    "com.typesafe.play"      %% "play-json"                          % "2.4.4",
     "com.gravity"            %% "goose"                              % "2.1.25-SNAPSHOT",
     "com.lihaoyi"            %% "upickle"                            % "0.3.6",
     "com.typesafe.akka"      %% "akka-stream-experimental"           % akkaStreamV,

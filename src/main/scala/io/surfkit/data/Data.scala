@@ -1,13 +1,12 @@
 package io.surfkit.data
 
-/**
- * Created by suroot on 23/08/15.
- */
+import play.api.libs.json.Json
+
 object Data {
-  case class City(Country:String,City:String,AccentCity:String,Region:String,Population:Int,Latitude:Double,Longitude:Double)
 
-  case class EmailStats(total:Long, totalDomains:Long, counts:Seq[(String, Int)])
+  case class Anchor(text: String, href: String, title: String)
 
-  case class NGram(ngram:String, groupBy:String, groupByValue:String, count:Long)
-  case class NGramStats(title:String, total:Long, sex:String, data:Seq[NGram])
+  implicit val anchorWrites = Json.writes[Anchor]
+  implicit val anchorReads = Json.reads[Anchor]
+
 }
