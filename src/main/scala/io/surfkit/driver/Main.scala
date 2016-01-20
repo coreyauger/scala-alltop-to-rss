@@ -42,10 +42,11 @@ object Main extends App{
     }).map(_.filter(_.isSuccess).map(_.get).flatten)
   }
 
-  override def main(args: Array[String]) {
+
+  def extractIndex() = {
     // alpha range
     val alpha = 'a' to 'z'
-    /*
+
     val urls = alpha.toList.map(l => s"http://alltop.com/results/?alpha=${l}")
     val indexFuture: Future[List[Anchor]] = extractor[Anchor](urls, "h3 > a"){ elm =>
       Anchor(elm.text(), elm.attr("href"), elm.attr("title"))
@@ -58,9 +59,12 @@ object Main extends App{
       println("write......................")
       writer.println(jsonList)
       writer.close()
-    }*/
+    }
+  }
 
-    //new FileOutputStream("topics.json").close() // truncate file
+  def gatherTopicSites = {
+
+    new FileOutputStream("topics.json").close() // truncate file
 
     val json = Files.readAllLines(FileSystems.getDefault().getPath(".", "index.json")).mkString("")
     val indexAnchors = Json.parse(json).as[List[Anchor]]
@@ -87,11 +91,14 @@ object Main extends App{
       writer.close()
 
     }
+  }
 
+  override def main(args: Array[String]) {
 
-    //val flatListFuture:Future[List[Anchor]] = indexFuture.
+    //extractIndex
 
-    //index.
-    //val jsoup = Jsoup.parse(body)
+    //gatherTopicSites
+
+    // TODO: hit site get meta data try to extract rss feed..
   }
 }
