@@ -17,6 +17,7 @@ lazy val deps = {
   val sparkV = "1.6.0"
   val akkaStreamV = "1.0"
   Seq(
+   "org.slf4j"               % "slf4j-nop"                           % "1.7.13",
     "org.jsoup"              %  "jsoup"                              % "1.8.3",
     "com.typesafe.play"      %% "play-ws"                            % "2.4.4",
     "com.typesafe.play"      %% "play-json"                          % "2.4.4",
