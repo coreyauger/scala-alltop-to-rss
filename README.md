@@ -1,5 +1,5 @@
 # scala-alltop-to-rss
-Multple passes to extract and clean the sites listed on the blog agregate site (http://alltop.com/)[alltop]
+Multple passes to extract and clean the sites listed on the blog agregate site http://alltop.com/
 
 Here are some of the steps that were taken:
 * Captured all the categories and links to sites from alltop
