@@ -1,5 +1,5 @@
 # scala-alltop-to-rss
-Multple passes to extract and clean the sites listed on the blog agregate site (alltop)[http://alltop.com/]
+Multple passes to extract and clean the sites listed on the blog agregate site (http://alltop.com/)[alltop]
 
 Here are some of the steps that were taken:
 * Captured all the categories and links to sites from alltop
@@ -8,7 +8,7 @@ Here are some of the steps that were taken:
 * The final list contains: topic, alltop url, and then a list of sites for that category.
 
 ## Json file format
-The resulting file is ~1.2meg and is called cleanrss.json.  This file has the following format
+The resulting file is ~2.5meg and is called cleanrss.json.  This file has the following format
 
 ```json
 {
